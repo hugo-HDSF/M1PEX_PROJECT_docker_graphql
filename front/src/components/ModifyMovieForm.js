@@ -52,11 +52,12 @@ const ModifyMovieForm = () => {
       setYear('');
       setGenre('');
     } catch (error) {
-      console.error('Error when modifying Movie:', error);
+      console.error('Error when modifying Realisator:', error);
       if (error.networkError) {
         console.error('Network Error:', error.networkError);
       }
       if (error.graphQLErrors) {
+        // biome-ignore lint/complexity/noForEach: <explanation>
         error.graphQLErrors.forEach(({ message, locations, path }) => {
           console.error(`GraphQL Error: Message: ${message}, Location: ${locations}, Path: ${path}`);
         });

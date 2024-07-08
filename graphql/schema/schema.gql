@@ -1,7 +1,7 @@
 # schema.gql
 
 type Saga {
-    title: String!
+    title: String
     description: String
     movies: [Movie]
 }
@@ -28,13 +28,13 @@ type Query {
 type Mutation {
     addSaga(
         title: String!
-        description: String
-        movies: [MovieInput]
+        description: String!
+        movies: [MovieInput]!
     ): Saga
     modifySaga(
         findTitle: String!
         title: String!
-        description: String
+        description: String!
         movies: [MovieInput]!
     ): Saga
     deleteSaga(title: String!): Boolean
@@ -78,8 +78,8 @@ input RealisatorInput {
 }
 
 input MovieInput {
-    title: String
-    realisators: [RealisatorInput]
-    year: String
-    genre: String
+    title: String!
+    realisators: [RealisatorInput]!
+    year: String!
+    genre: String!
 }

@@ -10,9 +10,9 @@ const AddMovieForm = () => {
   const [genre, setGenre] = useState('');
 
   const { loading: realisatorsLoading, error: realisatorsError, data: realisatorsData } = useQuery(GET_REALISATORS);
+  
   const [addMovie] = useMutation(ADD_MOVIE, {
     update(cache, { data: { addMovie } }) {
-      // Mise à jour du cache après l'ajout d'un movie
       const { movies } = cache.readQuery({ query: GET_MOVIES });
       cache.writeQuery({
         query: GET_MOVIES,

@@ -47,14 +47,14 @@ const ModifySagaForm = () => {
       setDescription('');
       setSelectedMovies([]);
     } catch (error) {
-      console.error('Error when modifying Saga:', error);
+      console.error('Error when modifying Realisator:', error);
       if (error.networkError) {
         console.error('Network Error:', error.networkError);
-        console.error('Network Error Details:', error.networkError.result);
       }
       if (error.graphQLErrors) {
-        error.graphQLErrors.forEach(({ message, locations, path, extensions }) => {
-          console.error(`GraphQL Error: Message: ${message}, Location: ${locations}, Path: ${path}, Extensions: ${JSON.stringify(extensions)}`);
+        // biome-ignore lint/complexity/noForEach: <explanation>
+        error.graphQLErrors.forEach(({ message, locations, path }) => {
+          console.error(`GraphQL Error: Message: ${message}, Location: ${locations}, Path: ${path}`);
         });
       }
     }

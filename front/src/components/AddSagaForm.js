@@ -10,12 +10,12 @@ const AddSagaForm = () => {
 
   const { loading: moviesLoading, error: moviesError, data: moviesData } = useQuery(GET_MOVIES);
 
-  const [addSagas] = useMutation(ADD_SAGA, {
-    update(cache, { data: { addSagas } }) {
+  const [addSaga] = useMutation(ADD_SAGA, {
+    update(cache, { data: { addSaga } }) {
       const { sagas } = cache.readQuery({ query: GET_SAGAS });
       cache.writeQuery({
         query: GET_MOVIES,
-        data: { sagas: [...sagas, addSagas] },
+        data: { sagas: [...sagas, addSaga] },
       });
     },
   });
@@ -23,15 +23,14 @@ const AddSagaForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await addSagas({
+      const { data } = await addSaga({
         variables: {
           title,
           description,
           movies: selectedMovies.map(movie => ({ title: movie.title }))
         },
       });
-      console.log('Saga added:', data.addSagas);
-      // Réinitialiser les champs du formulaire après l'ajout
+      console.log('Saga added:', data.addSaga);
       setTitle('');
       setDescription('');
       setSelectedMovies([]);

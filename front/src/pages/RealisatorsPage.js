@@ -7,7 +7,7 @@ const RealisatorsPage = () => {
   const { loading, error, data } = useQuery(GET_REALISATORS);
 
   if (loading) return <p>Loading Realisators...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div className="page-container">
