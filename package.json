@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "graphql-codegen =-config codegen.yml",
+    "serve": "tsx watch back/src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.10.8",
+    "@apollo/server": "^4.10.1",
+    "@biomejs/biome": "^1.6.1",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-resolvers": "^4.0.6",
+    "@types/node": "^20.11.26",
+    "graphql": "^16.9.0",
+    "mongodb": "^6.6.2",
+    "mongodb-memory-server": "^9.4.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}

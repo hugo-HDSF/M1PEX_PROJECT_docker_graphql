@@ -1,0 +1,85 @@
+# schema.gql
+
+type Saga {
+    title: String!
+    description: String
+    movies: [Movie]
+}
+
+type Movie {
+    title: String
+    realisators: [Realisator]
+    year: String
+    genre: String
+}
+
+type Realisator {
+    firstname: String
+    lastname: String
+    birthdate: String
+}
+
+type Query {
+    movies: [Movie]
+    realisators: [Realisator]
+    sagas: [Saga]
+}
+
+type Mutation {
+    addSaga(
+        title: String!
+        description: String
+        movies: [MovieInput]
+    ): Saga
+    modifySaga(
+        findTitle: String!
+        title: String!
+        description: String
+        movies: [MovieInput]!
+    ): Saga
+    deleteSaga(title: String!): Boolean
+    addMovie(
+        title: String!
+        year: String!
+        genre: String!
+        realisators: [RealisatorInput]!
+    ): Movie
+    modifyMovie(
+        findTitle: String!
+        title: String!
+        year: String!
+        genre: String!
+        realisators: [RealisatorInput]!
+    ): Movie
+    deleteMovie(title: String!): Boolean
+    addRealisator(
+        firstname: String!
+        lastname: String!
+        birthdate: String!
+    ): Realisator
+    modifyRealisator(
+        firstname: String!
+        lastname: String!
+        birthdate: String!
+        newFirstname: String!
+        newLastname: String!
+        newBirthdate: String!
+    ): Realisator
+    deleteRealisator(
+        firstname: String!
+        lastname: String!
+    ): Boolean
+}
+
+input RealisatorInput {
+    firstname: String!
+    lastname: String!
+    birthdate: String!
+}
+
+input MovieInput {
+    title: String
+    realisators: [RealisatorInput]
+    year: String
+    genre: String
+}
