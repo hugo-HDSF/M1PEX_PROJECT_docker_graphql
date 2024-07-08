@@ -25,11 +25,11 @@
 
 <div align="center">
 
-![Node.js](https://img.shields.io/badge/-Node.js_21.2-339933?logo=node.js&logoColor=white)
 ![Apollo](https://img.shields.io/badge/-Apollo_Server_4.10-311C87?logo=apollo-graphql&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/-GraphQL_16.9-E10098?logo=graphql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/-MongoDB_6.6-47A248?logo=mongodb&logoColor=white)
 ![Biome](https://img.shields.io/badge/-Biome_1.6-42A5F4?logo=biome&logoColor=white)
+![React](https://img.shields.io/badge/-React_18.3-61DAFB?logo=react&logoColor=black)
 
 </div>
 
